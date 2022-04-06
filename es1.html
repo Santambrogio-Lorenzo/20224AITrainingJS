@@ -3,8 +3,15 @@
     <title>JSES1</title>
   </head>
   <body id="body1">
-    <h1 id="text1">JSES1</h1>
-    <h2 id="text2"></h2>
+    <div id="happy">
+      <h1 id="h1happy" style="color: chartreuse">JSES1</h1>
+      <h2 id="text2">first excercise of Vanilla JS training</h2>
+    </div>
+    <!------------------------------------>
+    <div id="angry">
+      <h1 id="h1angry">TI AVEVO DETTO DI NON CLICCARE SCEMO</h1>
+    </div>
+    <!------------------------------------>
     <button id="btn1">NON CLICCARE!</button>
     <script>
       var x;
@@ -14,26 +21,42 @@
       x = false;
       console.log("x = false:", x);
 
-      document.getElementById("text2").innerText =
-        "first excercise of Vanilla JS training";
-      console.log(
-        "text2 inner HTML:",
-        document.getElementById("text2").innerText
-      );
-      document.getElementById("text1").setAttribute("style", "color:green");
-      //document.getElementById("text1").style.color = "green";
+      var render = function (x) {
+        if (!x) {
+          document
+            .getElementById("body1")
+            .setAttribute("style", "background-color:white");
+          document
+            .getElementById("happy")
+            .setAttribute("style", "display: block");
+          document
+            .getElementById("angry")
+            .setAttribute("style", "display: none");
+        } else {
+          document
+            .getElementById("body1")
+            .setAttribute("style", "background-color:red");
+          document
+            .getElementById("happy")
+            .setAttribute("style", "display: none");
+          document
+            .getElementById("angry")
+            .setAttribute("style", "display: block");
+        }
+      };
+      render(false);
 
       var button = document.getElementById("btn1");
 
       button.addEventListener("click", function () {
         console.log("click");
-        document.getElementById("body1").setAttribute("style", "background-color:red");
-      } );
+        x = !x;
+        render(x);
+      });
 
-    //   button.addEventListener("click", () => {
-    //     console.log("click");
-    //   } );
-      
+      //   button.addEventListener("click", () => {
+      //     console.log("click");
+      //   } );
     </script>
   </body>
 </html>
