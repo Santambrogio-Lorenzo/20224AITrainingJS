@@ -21,37 +21,27 @@
       x = false;
       console.log("x = false:", x);
 
-      var render = function (x) {
-        if (!x) {
-          document
-            .getElementById("body1")
-            .setAttribute("style", "background-color:white");
-          document
-            .getElementById("happy")
-            .setAttribute("style", "display: block");
-          document
-            .getElementById("angry")
-            .setAttribute("style", "display: none");
-        } else {
-          document
-            .getElementById("body1")
-            .setAttribute("style", "background-color:red");
-          document
-            .getElementById("happy")
-            .setAttribute("style", "display: none");
-          document
-            .getElementById("angry")
-            .setAttribute("style", "display: block");
-        }
+      var render = function (color, statusHappy, statusAngry) {
+        document
+          .getElementById("body1")
+          .setAttribute("style", "background-color:" + color + "");
+        document
+          .getElementById("happy")
+          .setAttribute("style", "display: " + statusHappy + "");
+        document
+          .getElementById("angry")
+          .setAttribute("style", "display: " + statusAngry + "");
       };
-      render(false);
+      render("white", "block", "none");
 
-      var button = document.getElementById("btn1");
-
-      button.addEventListener("click", function () {
+      document.getElementById("btn1").addEventListener("click", function () {
         console.log("click");
         x = !x;
-        render(x);
+        if (!x) {
+          render("white", "block", "none");
+        } else {
+          render("red", "none", "block");
+        }
       });
 
       //   button.addEventListener("click", () => {
