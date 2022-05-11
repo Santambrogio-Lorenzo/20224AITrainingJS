@@ -33,7 +33,7 @@
     <h1 style="color: chartreuse">JSES3</h1>
     <h2>JQuery calculator</h2>
     <div>
-      <table class="sexyPoglianiTable">
+      <table class="sexyPoglianiTable" id="table">
         <th>ID</th>
         <th>N1</th>
         <th>SIGN</th>
@@ -65,12 +65,24 @@
     <button id="btn3">*</button>
     <button id="btn4">/</button>
     <script>
-      $("#btn1").click(function() {
-        var n1 = +($("#N1").val());
-        var n2 = +($("#N2").val());
+      var count = 2;
+      $("#btn1").click(function () {
+        count++;
+        var n1 = +$("#N1").val();
+        var n2 = +$("#N2").val();
         //console.log(n1 -(-n2));
         console.log(n1 + n2);
-        console.log("<tr><td>3</td><td>"+n1+"</td><td>+</td><td>"+n2+"</td><td>"+(n1 + n2)+"</td></tr>");
+        $("#table").append(
+          "<tr><td>" +
+            count +
+            "</td><td>" +
+            n1 +
+            "</td><td>+</td><td>" +
+            n2 +
+            "</td><td>" +
+            (n1 + n2) +
+            "</td></tr>"
+        );
       });
     </script>
   </body>
