@@ -60,10 +60,18 @@
     <br />
     <input type="number" id="N2" placeholder="second number" />
     <br /><br />
-    <button id="+">+</button>
-    <button id="-">-</button>
-    <button id="*">*</button>
-    <button id="/">/</button>
-    <script></script>
+    <button id="btn1">+</button>
+    <button id="btn2">-</button>
+    <button id="btn3">*</button>
+    <button id="btn4">/</button>
+    <script>
+      $("#btn1").click(function() {
+        var n1 = +($("#N1").val());
+        var n2 = +($("#N2").val());
+        //console.log(n1 -(-n2));
+        console.log(n1 + n2);
+        console.log("<tr><td>3</td><td>"+n1+"</td><td>+</td><td>"+n2+"</td><td>"+(n1 + n2)+"</td></tr>");
+      });
+    </script>
   </body>
 </html>
