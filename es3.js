@@ -12,7 +12,15 @@ $("#btn4").click(function () {
   calculation("/");
 });
 
+var addFirstLine = (function() {
+  if (localStorage.getItem("trStrings")) {
+    console.log("bella");
+    $("#table").append(localStorage.getItem("trStrings"));
+  }
+})();
+
 function calculation(sign) {
+  console.log("strings:", localStorage.getItem("trStrings"));
   if ($("#N1").val() && $("#N2").val()) {
     count++;
     var n1 = +$("#N1").val();
@@ -34,18 +42,19 @@ function calculation(sign) {
         break;
     }
     console.log(res);
-    $("#table").append(
+    var trString =
       "<tr><td>" +
-        count +
-        "</td><td>" +
-        n1 +
-        "</td><td>" +
-        sign +
-        "</td><td>" +
-        n2 +
-        "</td><td>" +
-        res +
-        "</td></tr>"
-    );
+      count +
+      "</td><td>" +
+      n1 +
+      "</td><td>" +
+      sign +
+      "</td><td>" +
+      n2 +
+      "</td><td>" +
+      res +
+      "</td></tr>";
+    localStorage.setItem("trStrings", trString);
+    $("#table").append(trString);
   } else alert("fill all the text field");
 }
