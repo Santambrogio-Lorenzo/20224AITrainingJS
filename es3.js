@@ -54,7 +54,7 @@ function calculation(sign) {
       "</td><td>" +
       res +
       "</td></tr>";
-    localStorage.setItem("trStrings", trString);
+    localStorage.setItem("trStrings", localStorage.getItem("trStrings")+trString);
     $("#table").append(trString);
   } else alert("fill all the text field");
 }
