@@ -1,5 +1,7 @@
 var count = 2;
+var n1,n2;
 $("#btn1").click(function () {
+  
   calculation("+");
 });
 $("#btn2").click(function () {
@@ -18,6 +20,7 @@ var addFirstLine = (function() {
     $("#table").append(localStorage.getItem("trStrings"));
   }
 })();
+
 
 function calculation(sign) {
   console.log("strings:", localStorage.getItem("trStrings"));

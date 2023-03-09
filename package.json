@@ -1,0 +1,23 @@
+{
+  "name": "20224aitrainingjs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "es3.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/OSDBSesto/20224AITrainingJS.git"
+  },
+  "author": "santambrogio.lorenzo",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/OSDBSesto/20224AITrainingJS/issues"
+  },
+  "homepage": "https://github.com/OSDBSesto/20224AITrainingJS#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.18.2"
+  }
+}
